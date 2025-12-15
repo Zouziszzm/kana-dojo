@@ -4,9 +4,7 @@ export default {
     './components/**/*.{ts,tsx}',
     './features/**/*.{ts,tsx}',
     './shared/**/*.{ts,tsx}',
-    './core/**/*.{ts,tsx}',
-    './static/styles.ts',
-    './static/info.tsx'
+    './core/**/*.{ts,tsx}'
   ],
   theme: {
     screens: {

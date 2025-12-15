@@ -89,7 +89,6 @@ const Themes = () => {
  */
   useEffect(() => {
     setIsMounted(true);
-    console.log(isMounted);
     setRandomTheme(
       themeSets[2].themes[random.integer(0, themeSets[2].themes.length - 1)]
     );

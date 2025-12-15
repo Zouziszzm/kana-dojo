@@ -12,6 +12,7 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "clean": "rimraf .next tsconfig.tsbuildinfo",
     "prepare": "husky",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "i18n:validate": "node scripts/i18n/validate-translations.js",
@@ -22,8 +23,12 @@
   },
   "type": "module",
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json,css,scss,md,yml,yaml}": [
-      "npx prettier --write"
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{js,jsx,json,css,scss,md,yml,yaml}": [
+      "prettier --write"
     ]
   },
   "dependencies": {
@@ -44,7 +49,6 @@
     "framer-motion": "^12.23.24",
     "localforage": "^1.10.0",
     "lucide-react": "^0.484.0",
-    "motion": "^12.7.4",
     "next": "15.5.7",
     "next-intl": "^4.3.12",
     "next-scroll-restoration": "^0.0.4",
@@ -84,6 +88,7 @@
     "tailwindcss": "^4.1.4",
     "tsx": "^4.20.6",
     "typescript": "^5",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "rimraf": "^6.0.1"
   }
 }
